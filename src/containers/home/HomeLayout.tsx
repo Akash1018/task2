@@ -29,9 +29,28 @@ const CustomTab: React.FC<TabProps> = ({ children, ...props }) => {
 const HomeLayout = () => {
   // const {state, setState} = useData();
 
-  const [requisitionInfo, setRequisitionInfo] = useState({});
-  const [jobDetailsInfo, setJobDetailsInfo] = useState({});
-  const [interviewSettingsInfo, setInterviewSettingsInfo] = useState({});
+  // const [requisitionInfo, setRequisitionInfo] = useState({});
+  // const [jobDetailsInfo, setJobDetailsInfo] = useState({});
+  // const [interviewSettingsInfo, setInterviewSettingsInfo] = useState({});
+
+  const [requisitionInfo, setRequisitionInfo] = useState({
+          requisitionTitle: '',
+          noOfOpenings: 0,
+          urgency: '',
+          gender: ''
+  });
+
+  const [jobDetailsInfo, setJobDetailsInfo] = useState({
+          jobTitle: '',
+          jobDetails: '', 
+          jobLocation: ''
+   });
+  const [interviewSettingsInfo, setInterviewSettingsInfo] = useState({
+          interviewMode: '', 
+          interviewDuration: '', 
+          interviewLanguage: ''
+  });
+
   const [page, setPage] = useState<PageNumbers>(0);
 
   const handlePage = (pageNumber: PageNumbers) => {
@@ -64,7 +83,7 @@ const HomeLayout = () => {
                 <InterviewSettingsForm setInterviewSettingsInfo = {setInterviewSettingsInfo} handleTab={handlePage} />
               </TabPanel>
             </TabPanels>
-            <DisplayCard />
+            <DisplayCard  requisitionDetails={requisitionInfo} jobDetails={jobDetailsInfo} interviewSettings={interviewSettingsInfo} /> 
           </Grid>
         </Tabs>
       </Container>

@@ -27,7 +27,7 @@ const InterviewDetailsForm: React.FC<{
       interviewMode: "",
       interviewDuration: "",
       interviewLanguage: "",
-    },// Validations
+    },// Added Validations
     validationSchema:Yup.object().shape({
       interviewMode: Yup.string().required("Urgency is required"),
       interviewDuration: Yup.string().required("Urgency is required"),

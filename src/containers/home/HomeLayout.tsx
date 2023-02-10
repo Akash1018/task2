@@ -27,12 +27,15 @@ const CustomTab: React.FC<TabProps> = ({ children, ...props }) => {
 };
 
 const HomeLayout = () => {
+
+  //Working but showing error when deployin
   // const {state, setState} = useData();
 
-  // const [requisitionInfo, setRequisitionInfo] = useState({});
-  // const [jobDetailsInfo, setJobDetailsInfo] = useState({});
-  // const [interviewSettingsInfo, setInterviewSettingsInfo] = useState({});
+  // const [requisitionInfo, setRequisitionInfo] = useState({state.requisitionDetails});
+  // const [jobDetailsInfo, setJobDetailsInfo] = useState({state.jobDetails});
+  // const [interviewSettingsInfo, setInterviewSettingsInfo] = useState({state.interviewSettings});
 
+  //alternate approach
   const [requisitionInfo, setRequisitionInfo] = useState({
           requisitionTitle: '',
           noOfOpenings: 0,

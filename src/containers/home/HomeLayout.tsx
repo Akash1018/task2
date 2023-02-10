@@ -27,11 +27,11 @@ const CustomTab: React.FC<TabProps> = ({ children, ...props }) => {
 };
 
 const HomeLayout = () => {
- // const {state, setState} = useData();
+  const {state, setState} = useData();
 
-  // const [requisitionInfo, setRequisitionInfo] = useState(state.requisitionDetails);
-  // const [jobDetailsInfo, setJobDetailsInfo] = useState(state.jobDetails);
-  // const [interviewSettingsInfo, setInterviewSettingsInfo] = useState(state.interviewSettingsForm);
+  const [requisitionInfo, setRequisitionInfo] = useState(state.requisitionDetails);
+  const [jobDetailsInfo, setJobDetailsInfo] = useState(state.jobDetails);
+  const [interviewSettingsInfo, setInterviewSettingsInfo] = useState(state.interviewSettingsForm);
   const [page, setPage] = useState<PageNumbers>(0);
 
   const handlePage = (pageNumber: PageNumbers) => {
@@ -39,16 +39,7 @@ const HomeLayout = () => {
     setPage(pageNumber);
     
   };
-  const [requisitionForm, setRequisitionForm] = useState({
-    requisitionTitle: '', noOfOpenings: 0, urgency: '', gender: ''
-  });
 
-  const [jobDetailsForm, setJobDetailsForm] = useState({
-    jobTitle: '', jobDetails: '', jobLocation: ''
-  });
-  const [interviewSettingsForm, setInterviewSettingsForm] = useState({
-    interviewMode: '', interviewDuration: '', interviewLanguage: ''
-  });
   return (
     <Box w="100%">
       <Container maxW="1200px">
